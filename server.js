@@ -58,22 +58,29 @@ app.get("/home", (req, res) => {
 });
 
 //pedals inventory page
-app.get("/pedals", (req, res) => {
+app.get("/pedals/:id", (req, res) => {
   res.send("I'm the pedals page!");
 });
 
-app.get("/guitars", (req, res) => {
+//guitars inventory page
+
+app.get("/guitars/:id", (req, res) => {
   res.send("I'm the guitars page!");
 });
 
-app.get("/amps", (req, res) => {
+//amps inventory page
+
+app.get("/amps/:id", (req, res) => {
   res.send("I'm the amps page!");
 });
+
+// new sale listingpage
 
 app.get("/newSaleListing", (req, res) => {
   res.send("I'm the new sale listing page!");
 });
 
+// seller listings page
 app.get("/sellerListings", (req, res) => {
   res.send("I'm the seller listings page!");
 });
