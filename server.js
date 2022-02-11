@@ -47,8 +47,35 @@ app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get("/", (req, res) => {
+
+/* -------------------------------------------------------------------------- */
+/*                        GET ROUTES / SHOW PAGES                             */
+/* -------------------------------------------------------------------------- */
+
+//homepage
+app.get("/home", (req, res) => {
   res.send("Hello World!");
+});
+
+//pedals inventory page
+app.get("/pedals", (req, res) => {
+  res.send("I'm the pedals page!");
+});
+
+app.get("/guitars", (req, res) => {
+  res.send("I'm the guitars page!");
+});
+
+app.get("/amps", (req, res) => {
+  res.send("I'm the amps page!");
+});
+
+app.get("/newSaleListing", (req, res) => {
+  res.send("I'm the new sale listing page!");
+});
+
+app.get("/sellerListings", (req, res) => {
+  res.send("I'm the seller listings page!");
 });
 
 //___________________
