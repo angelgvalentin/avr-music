@@ -23,6 +23,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
 mongoose.connect(MONGODB_URI);
+console.log(MONGODB_URI);
 
 // Error / success
 db.on("error", (err) => console.log(err.message + " is Mongod not running?"));
@@ -54,7 +55,7 @@ app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
 //homepage
 app.get("/home", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World! The home page works!");
 });
 
 //pedals inventory page
