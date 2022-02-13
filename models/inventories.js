@@ -7,6 +7,7 @@ const gearSchema = new mongoose.Schema({
   description: { type: String, required: true },
   img: { type: String, required: true },
   video: { type: String, required: true },
+  userListing: { type: String, required: false },
 });
 
 const Inventory = mongoose.model("Inventory", gearSchema);

@@ -15,8 +15,7 @@ module.exports = [
     description:
       "The PRS Silver Sky was designed by Paul Reed Smith and built to John Mayer's specifications. This vintage-inspired guitar boasts a familiar shape with an eye-catching contrasting tone in its cutaway scoop. Its neck carve, scale length, and fingerboard radius were modeled after John's early-'60s instruments; however, a modified PRS-style headstock and locking tuners propel it firmly into the twenty-first century. Park this axe in front of any tube amp, and its sweet-sounding single-coil pickups will churn out glassy, musical tones with excellent note definition. Beyond that, the Silver Sky includes a bone nut, molded metal jack plate, retooled knobs, custom fret-wire, and PRS's double-action truss rod.",
     img: "https://media.musiciansfriend.com/is/image/MMGS7/L18249000007000-02-2000x2000.jpg",
-    video:
-      "httpshttps://www.youtube.com/watch?v=7AhrIf2dpok://www.youtube.com/watch?v=xIZ6hXSY2CQ",
+    video: "https://www.youtube.com/embed/xIZ6hXSY2CQ",
   },
   {
     category: "amp",

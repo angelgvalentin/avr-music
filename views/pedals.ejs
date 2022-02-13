@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs')%>
+  <body>
+    <%- include('./partials/nav.ejs')%>
+
+    <h1>Pedals</h1>
+
+    <section>
+      <ul>
+        <% for (let i = 0; i < pedalList.length; i++) { %>
+        <a href="/gearShow/<%=pedalList[i].id%>">
+          <div id="card-container">
+            <li>
+              <img
+                id="card-img"
+                src="<%=pedalList[i].img%>"
+                alt="Pedal Photo"
+              />
+            </li>
+            <li><%=pedalList[i].name %></li>
+
+            <li>Price: $<%=pedalList[i].price %></li>
+          </div>
+        </a>
+        <% } %>
+      </ul>
+    </section>
+  </body>
+</html>

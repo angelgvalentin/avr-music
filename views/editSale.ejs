@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs')%>
+
+  <script>
+    const myFunction = () => {
+      var x = document.getElementById("mySelect").value;
+      document.getElementById("demo").innerHTML = x;
+    };
+  </script>
+
+  <body>
+    <%- include('./partials/nav.ejs')%>
+
+    <h1>Edit Your Listing</h1>
+
+    <form action="/editSale/<%=editedListing.id%>?_method=PUT " method="POST">
+      Choose a Category:
+      <select name="category" value="<%=editedListing.category  %> ">
+        <option>--select</option>
+
+        <option>Guitar</option>
+        <option>Pedal</option>
+        <option>Amp</option>
+      </select>
+      <br />
+
+      Name: <input type="text" name="name" value="<%=editedListing.name%> " />
+      <br />
+      Price:
+      <input type="text" name="price" value="<%=editedListing.price%> " />
+      <br />
+
+      <br />
+      Description: <br />
+      <textarea
+        rows="5"
+        cols="60"
+        name="description"
+        value="<%=editedListing.description%> "
+      >
+<%=editedListing.description%></textarea
+      >
+      <br />
+      Image Link:<input
+        type="text"
+        name="img"
+        value="<%=editedListing.img%> "
+      />
+      <br />
+      Video Link:
+      <input type="text" name="video" value="<%=editedListing.video%> " /><br />
+      <input type="hidden" name="userListing" value="userListing" />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

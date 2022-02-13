@@ -1,0 +1,27 @@
+#card-img {
+  width: 200px;
+  height: auto;
+}
+
+#card-container {
+  display: flex;
+  width: 230px;
+  height: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: block;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  width: 95%;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs')%>
+  <body>
+    <%- include('./partials/nav.ejs')%>
+
+    <section>
+      <ul>
+        <% for (let i = 0; i < guitarList.length; i++) { %>
+        <a href="/gearShow/<%=guitarList[i].id%>">
+          <div id="card-container">
+            <li>
+              <img
+                id="card-img"
+                src="<%=guitarList[i].img%>"
+                alt="Guitar Photo"
+              />
+            </li>
+            <li><%=guitarList[i].name %></li>
+
+            <li>Price: $<%=guitarList[i].price %></li>
+          </div>
+        </a>
+        <% } %>
+      </ul>
+    </section>
+  </body>
+</html>
