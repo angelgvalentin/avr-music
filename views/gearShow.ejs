@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs')%>
+  <body>
+    <%- include('./partials/nav.ejs')%>
+
+    <section>
+      <ul>
+        <li>
+          <a href=""
+            ><img id="card-img" src="<%=gearShow.img%>" alt="Guitar Photo"
+          /></a>
+        </li>
+        <li><%=gearShow.name %></li>
+        <li><%=gearShow.description %></li>
+        <li>Price: $<%=gearShow.price %></li>
+      </ul>
+
+      <iframe
+        width="560"
+        height="315"
+        src="<%=gearShow.video%>"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </section>
+  </body>
+</html>
