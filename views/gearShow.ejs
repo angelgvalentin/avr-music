@@ -2,7 +2,8 @@
 <html lang="en">
   <%- include('./partials/head.ejs')%>
   <body>
-    <%- include('./partials/nav.ejs')%>
+    <%- include('./partials/nav.ejs')%> <%-
+    include('./partials/shoppingCart.ejs')%>
 
     <section>
       <ul>
@@ -15,7 +16,9 @@
         <li><%=gearShow.description %></li>
         <li>Price: $<%=gearShow.price %></li>
       </ul>
-
+      <form action="/addToCart/<%=gearShow.id%>" method="POST">
+        <Button>ADD TO CART</Button>
+      </form>
       <iframe
         width="560"
         height="315"

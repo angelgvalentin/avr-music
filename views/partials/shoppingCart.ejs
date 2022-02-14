@@ -1,0 +1,28 @@
+<div id="side-cart" class="side-nav">
+  <a href="#" class="btn-close" onclick="closeSlideCart()">&times;</a>
+  <% for (let i = 0; i < allGear.length; i++) { %>
+  <a href="/gearShow/<%=allGear[i].id%>">
+    <div id="card-container">
+      <li>
+        <img id="card-img" src="<%=allGear[i].img%>" alt="Guitar Photo" />
+      </li>
+      <li><%=allGear[i].name %></li>
+
+      <li>Price: $<%=allGear[i].price %></li>
+    </div>
+  </a>
+  <% } %>
+</div>
+
+<script>
+  const openSlideCart = () => {
+    document.getElementById("side-cart").style.width = "250px";
+
+    document.getElementById("main").style.marginLeft = "250px";
+  };
+
+  const closeSlideCart = () => {
+    document.getElementById("side-cart").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  };
+</script>

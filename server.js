@@ -45,6 +45,23 @@ app.use(express.json()); // returns middleware that only parses JSON - may or ma
 //use method override
 app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 
+/* -------------------------------------------------------------------------- */
+/*                             SIDE CART FUNTIONS                             */
+/* -------------------------------------------------------------------------- */
+
+const openSlideCart = () => {
+  document.getElementById("side-cart").style.width = "250px";
+
+  document.getElementById("main").style.marginLeft = "250px";
+};
+
+const closeSlideCart = () => {
+  document.getElementById("side-cart").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+};
+
+/* ----------------------- END OF SIDE CART FUNCTIONS ----------------------- */
+
 //___________________
 // Routes
 //___________________
@@ -62,6 +79,7 @@ app.get("/home", (req, res) => {
       allGear,
     });
   });
+
   // res.send("Hello World! The home page works!");
 });
 
@@ -134,6 +152,16 @@ app.get("/editSale/:id", (req, res) => {
   });
 });
 
+// //SIDE SLIDE SHOPPNIG CART
+app.get("/addToCart/", (req, res) => {
+  Inventory.find(req.body, (err, cartGear) => {
+    res.render("./partials/shoppingCart.ejs", {
+      cartGear,
+    });
+  });
+  // res.send("Hello World! The home page works!");
+});
+
 /* -------------------------------------------------------------------------- */
 /*                                POST ROUTES                                 */
 /* -------------------------------------------------------------------------- */
@@ -151,6 +179,13 @@ app.post("/pedals");
 app.post("/guitars");
 
 app.post("/amps");
+
+//add to cart route
+app.post("/addToCart/:id", (req, res) => {
+  Inventory.findById(req.params.id, (err, addedItem) => {
+    console.log("item added to list");
+  });
+});
 
 /* -------------------------------------------------------------------------- */
 /*                                 PUT ROUTES                                 */
