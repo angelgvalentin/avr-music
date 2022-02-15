@@ -85,7 +85,7 @@ cartSum();
 /* -------------------------------------------------------------------------- */
 
 //homepage
-app.get("/home", (req, res) => {
+app.get("/index", (req, res) => {
   Inventory.find(req.body, (err, allGear) => {
     res.render("home.ejs", {
       title: "Homepage",
@@ -186,10 +186,10 @@ app.get("/editSale/:id", (req, res) => {
 /* -------------------------------------------------------------------------- */
 
 //new seller listing
-app.post("/home", (req, res) => {
+app.post("/index", (req, res) => {
   Inventory.create(req.body, (err, newListing) => {
     console.log("created new listing");
-    res.redirect("/home");
+    res.redirect("/index");
   });
 });
 
