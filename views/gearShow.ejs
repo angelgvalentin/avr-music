@@ -5,6 +5,18 @@
     <%- include('./partials/nav.ejs')%>
 
     <section>
+      <div id="left-container4video">
+        <iframe
+          width="560"
+          height="315"
+          src="<%=gearShow.video%>"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+
       <ul>
         <li>
           <a href=""
@@ -18,15 +30,6 @@
       <form action="/cart/add/<%=gearShow.id%>" method="POST">
         <Button>ADD TO CART</Button>
       </form>
-      <iframe
-        width="560"
-        height="315"
-        src="<%=gearShow.video%>"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
     </section>
   </body>
 </html>

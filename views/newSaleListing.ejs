@@ -4,32 +4,42 @@
 
   <body>
     <%- include('./partials/nav.ejs')%>
+    <DIV id="bodybackground">
+      <div id="form-container">
+        <form class="form-group" id="formStyle" action="/home" method="POST">
+          <h1 id="formHeader">What are you selling?</h1>
+          <div id="formBodyContainer">
+          <label
+            >Choose a Category:
+            <select name="category">
+              <option>--select</option>
 
-    <h1>What are you selling?</h1>
+              <option>Guitar</option>
+              <option>Pedal</option>
+              <option>Amp</option>
+            </select>
+          </label>
+          <br /><br>
 
-    <form action="/home" method="POST">
-      Choose a Category:
-      <select name="category">
-        <option>--select</option>
-
-        <option>Guitar</option>
-        <option>Pedal</option>
-        <option>Amp</option>
-      </select>
-      <br />
-
-      Name: <input type="text" name="name" /> <br />
-      Price: <input type="text" name="price" /> <br />
-      Description: <br />
-      <textarea rows="5" cols="60" name="description">
-Enter item description here...</textarea
-      >
-      <br />
-      Image Link:<input type="text" name="img" /> <br />
-      Video Link:
-      <input type="text" name="video" value="Must be embed video link." /><br />
-      <input type="hidden" name="userListing" value="userListing" />
-      <input type="submit" value="Submit" />
-    </form>
+          Name: <input type="text" name="name" /> <br /><br />
+          Price: <input type="text" name="price" /> <br /><br />
+          Description: <br />
+          <textarea rows="5" cols="60" name="description">
+  Enter item description here...</textarea
+          >
+          <br /><br />
+          Image Link:<input type="text" name="img" /> <br /><br />
+          Video Link:
+          <input
+            type="text"
+            name="video"
+            value="Must be embed video link."
+          /><br /><br />
+          <input type="hidden" name="userListing" value="userListing" />
+          <input class="btn btn-danger" type="submit" value="Submit" /><br />
+        </form>
+      </div>
+      </div>
+    </DIV>
   </body>
 </html>

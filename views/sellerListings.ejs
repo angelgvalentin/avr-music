@@ -4,6 +4,12 @@
   <body>
     <%- include('./partials/nav.ejs')%>
 
+    <div id="banner">
+      <div id="sellerbannerCard">
+        <h1 id="sellerListingTitle">SELLER LISTINGS</h1>
+      </div>
+    </div>
+
     <section>
       <ul>
         <% for (let i = 0; i < sellerList.length; i++) { %>
@@ -19,14 +25,20 @@
             <li><%=sellerList[i].name %></li>
 
             <li>Price: $<%=sellerList[i].price %></li>
-            <a href="/editSale/<%=sellerList[i].id %> "><button>EDIT</button></a
+            <a href="/editSale/<%=sellerList[i].id %> "
+              ><button class="btn btn-outline-secondary">EDIT</button></a
             ><br />
 
             <form
               action="/home/<%=sellerList[i].id %>?_method=DELETE"
               method="POST"
             >
-              <input type="submit" value="DELETE LISTING" />
+              <input
+                style="margin-left: 10px"
+                class="btn btn-outline-danger"
+                type="submit"
+                value="DELETE LISTING"
+              />
             </form>
           </div>
         </a>
