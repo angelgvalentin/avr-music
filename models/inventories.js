@@ -11,9 +11,9 @@ const gearSchema = new mongoose.Schema({
 });
 
 const Inventory = mongoose.model("Inventory", gearSchema);
-const SellerListings = mongoose.model("SellerListings", gearSchema);
+const Cart = mongoose.model("Cart", gearSchema);
 
 module.exports = {
   Inventory,
-  SellerListings,
+  Cart,
 };

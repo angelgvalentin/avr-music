@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs')%>
+  <body>
+    <%- include('./partials/nav.ejs')%>
+    <div id="banner">
+      <div id="ampsbannerCard">
+        <h1 id="bannerProductTitle">AMPS</h1>
+      </div>
+    </div>
+    <section>
+      <ul>
+        <% for (let i = 0; i < ampList.length; i++) { %>
+        <a href="/gearShow/<%=ampList[i].id%>">
+          <div id="card-container">
+            <li>
+              <img id="card-img" src="<%=ampList[i].img%>" alt="Guitar Photo" />
+            </li>
+            <li><%=ampList[i].name %></li>
+
+            <li>Price: $<%=ampList[i].price %></li>
+          </div>
+        </a>
+        <% } %>
+      </ul>
+    </section>
+  </body>
+</html>

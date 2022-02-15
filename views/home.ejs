@@ -2,9 +2,15 @@
 <html lang="en">
   <%- include('./partials/head.ejs')%>
   <body>
-    <%- include('./partials/nav.ejs')%> <%-
-    include('./partials/shoppingCart.ejs')%>
+    <%- include('./partials/nav.ejs')%>
+    <div id="banner">
+      <div id="homebannerCard">
+        <h1 id="siteName">AVG Music</h1>
+        <a id="sell-btn" href="/newSaleListing">SELL YOUR GEAR</a>
+      </div>
+    </div>
 
+    <h1 id="featuredProducts">Featured Products</h1>
     <section>
       <ul>
         <% for (let i = 0; i < allGear.length; i++) { %>
@@ -20,7 +26,6 @@
         </a>
         <% } %>
       </ul>
-      <a href="/newSaleListing">Sell your Gear</a>
     </section>
   </body>
 </html>

@@ -2,9 +2,12 @@
 <html lang="en">
   <%- include('./partials/head.ejs')%>
   <body>
-    <%- include('./partials/nav.ejs')%> <%-
-    include('./partials/shoppingCart.ejs')%>
-
+    <%- include('./partials/nav.ejs')%>
+    <div id="banner">
+      <div id="guitarbannerCard">
+        <h1 id="bannerProductTitle">GUITARS</h1>
+      </div>
+    </div>
     <section>
       <ul>
         <% for (let i = 0; i < guitarList.length; i++) { %>

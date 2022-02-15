@@ -1,10 +1,12 @@
 //___________________
 //Dependencies
 //___________________
+const { render } = require("ejs");
 const express = require("express");
 const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const { Inventory } = require("./models/inventories");
+const { Cart } = require("./models/inventories");
 const app = express();
 const db = mongoose.connection;
 require("dotenv").config();
@@ -62,6 +64,17 @@ const closeSlideCart = () => {
 
 /* ----------------------- END OF SIDE CART FUNCTIONS ----------------------- */
 
+let cartTotal = 0;
+const cartSum = () => {
+  cartTotal = Cart;
+  console.log(Cart.find({ price: 199 }));
+};
+cartSum();
+
+/* -------------------------------------------------------------------------- */
+/*                             CART TOTAL FUNCTION                            */
+/* -------------------------------------------------------------------------- */
+
 //___________________
 // Routes
 //___________________
@@ -109,8 +122,14 @@ app.get("/guitars", (req, res) => {
 });
 
 //amps inventory page
-app.get("/amps/:id", (req, res) => {
-  res.send("I'm the amps page!");
+
+app.get("/amps", (req, res) => {
+  Inventory.find({ category: "Amp" }, (err, ampList) => {
+    res.render("amps.ejs", {
+      ampList,
+      title: "Amps",
+    });
+  });
 });
 
 //gear Show  page
@@ -153,14 +172,14 @@ app.get("/editSale/:id", (req, res) => {
 });
 
 // //SIDE SLIDE SHOPPNIG CART
-app.get("/addToCart/", (req, res) => {
-  Inventory.find(req.body, (err, cartGear) => {
-    res.render("./partials/shoppingCart.ejs", {
-      cartGear,
-    });
-  });
-  // res.send("Hello World! The home page works!");
-});
+// app.get("/addToCart/", (req, res) => {
+//   Inventory.find(req.body, (err, cartGear) => {
+//     res.render("./partials/shoppingCart.ejs", {
+//       cartGear,
+//     });
+//   });
+//   // res.send("Hello World! The home page works!");
+// });
 
 /* -------------------------------------------------------------------------- */
 /*                                POST ROUTES                                 */
@@ -180,12 +199,32 @@ app.post("/guitars");
 
 app.post("/amps");
 
-//add to cart route
-app.post("/addToCart/:id", (req, res) => {
-  Inventory.findById(req.params.id, (err, addedItem) => {
-    console.log("item added to list");
+//add to cart after side cart fail
+app.get("/cart", (req, res) => {
+  Cart.find(req.body, (err, itemsInCart) => {
+    res.render("cart.ejs", {
+      title: "Shopping Cart",
+      itemsInCart,
+      cartTotal,
+    });
   });
 });
+
+// submit form to add item to cart
+app.post("/cart/add/:id", async (req, res) => {
+  console.log("pokemon added to team");
+  const id = req.params.id;
+  const addedGear = await Inventory.findById(id);
+  await Cart.insertMany([addedGear]);
+  res.redirect("/cart");
+});
+
+// //add to cart route
+// app.post("/addToCart/:id", (req, res) => {
+//   Inventory.findById(req.params.id, (err, addedItem) => {
+//     console.log("item added to list");
+//   });
+// });
 
 /* -------------------------------------------------------------------------- */
 /*                                 PUT ROUTES                                 */

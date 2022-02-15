@@ -1,11 +1,16 @@
-<nav>
-  <button><a href="/home">HOME</a></button>
+<nav id="nav-container" class="navbar navbar-nav">
+  <a href="/home"><i id="houseicon" class="fa fa-home icon"></i></a>
+
   <ul>
     <li><a href="/guitars">GUITARS</a></li>
     <li><a href="/pedals">PEDALS</a></li>
     <li><a href="/amps">AMPS</a></li>
     <li><a href="/sellerListings">YOUR LISTINGS</a></li>
 
-    <li><a href="#" onclick="openSlideCart()">CART</a></li>
+    <li>
+      <a href="/cart" onclick="openSlideCart()"
+        ><i id="carticon" class="fa fa-shopping-cart icon"></i
+      ></a>
+    </li>
   </ul>
 </nav>

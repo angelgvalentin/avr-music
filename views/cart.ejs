@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head.ejs')%>
+
+  <body>
+    <%- include('./partials/nav.ejs')%>
+
+    <section>
+      <ul>
+        <% for (let i = 0; i < itemsInCart.length; i++) { %>
+        <a href="/gearShow/<%=itemsInCart[i].id%>">
+          <div id="card-container">
+            <li>
+              <img
+                id="card-img"
+                src="<%=itemsInCart[i].img%>"
+                alt="Guitar Photo"
+              />
+            </li>
+            <li><%=itemsInCart[i].name %></li>
+
+            <li>Price: $<%=itemsInCart[i].price %></li>
+          </div>
+        </a>
+        <% } %>
+      </ul>
+      <a href="/newSaleListing">Sell your Gear</a>
+    </section>
+
+    <script>
+      let hey = 0;
+      const sum = () => {
+        for (let i = 0; i < itemsInCart[i].length; i++) {
+          hey = hey + itemsInCart[i].price;
+          console.log(hey);
+        }
+      };
+    </script>
+    <footer></footer>
+  </body>
+</html>

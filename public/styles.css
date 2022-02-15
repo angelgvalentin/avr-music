@@ -1,18 +1,80 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  color: white;
+  background-color: black;
+  font-size: 1em;
+}
+
 #card-img {
-  width: 200px;
+  width: 180px;
   height: auto;
+  margin-top: 20px;
 }
 
 #card-container {
   display: flex;
-  width: 230px;
-  height: auto;
+  width: 250px;
+  height: 350px;
   flex-direction: row;
   flex-wrap: wrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  text-align: none;
+}
+
+li a,
+nav ul a {
+  text-decoration: none;
+  color: white;
+  font-weight: 900;
+  font-size: larger;
+}
+
+nav ul a:hover {
+  color: red;
+}
+
+#houseicon {
+  font-size: 35px;
+  margin-left: 15px;
+}
+
+#carticon {
+  font-size: 35px;
+  margin-right: 15px;
+}
+
+#houseicon:hover,
+#carticon:hover {
+  color: red;
+}
+
+i {
+  color: white;
+  font-size: 35px;
+}
+
+#card-container a {
+  text-decoration: none;
 }
 
 nav ul {
-  display: block;
+  display: flex;
+  justify-content: space-around;
+  width: 581px;
+
+  margin-bottom: 0;
+  margin-right: 10px;
 }
 
 ul {
@@ -20,6 +82,8 @@ ul {
   list-style: none;
   flex-wrap: wrap;
   width: 95%;
+  justify-content: center;
+  gap: 20px;
 }
 
 a {
@@ -59,4 +123,116 @@ a {
   right: 22px;
   font-size: 36px;
   margin-left: 50px;
+}
+
+#nav-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#homebtn-container {
+  display: flex;
+}
+
+#banner {
+  margin-bottom: 50px;
+}
+
+#homebannerCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  background-image: url("https://www.adorama.com/alc/wp-content/uploads/2017/08/shutterstock_584510992-825x465.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* align-items: end; */
+}
+
+#guitarbannerCard {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background-image: url("https://www.homestratosphere.com/wp-content/uploads/2020/10/where-to-buy-used-guitars-online-Oct52020-1-min.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#pedalbannerCard {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background-image: url("https://images.unsplash.com/photo-1614413193474-1eed5e2af769?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGVkYWxib2FyZHxlbnwwfHwwfHw%3D&w=1000&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#ampsbannerCard {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background-image: url("https://cdn.mos.cms.futurecdn.net/6peGWxFFhxhvsLH7n7hdfD-1200-80.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#sell-btn {
+  height: 40px;
+  width: 393px;
+  font-size: 40px;
+  font-weight: 800;
+  font-family: "Poppins", sans-serif;
+  background: red;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  margin-top: 212px;
+  margin-left: 844px;
+}
+
+#sell-btn:hover {
+  background-color: white;
+  color: red;
+  border-radius: 25px;
+  transition: 500ms;
+}
+
+#siteName {
+  height: 40px;
+  width: 700px;
+  font-size: 100px;
+  font-weight: 800;
+  font-family: "Poppins", sans-serif;
+  background: white;
+  color: Black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+  margin-top: 57px;
+  margin-left: 116px;
+}
+
+#featuredProducts {
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+#bannerProductTitle {
+  width: 728px;
+  height: 50px;
+  font-size: 150px;
+  margin-top: 161px;
+  margin-left: 368px;
+  font-family: Poppins;
+  color: black;
+  background: white;
+  display: flex;
+  padding: 79px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
