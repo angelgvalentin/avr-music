@@ -85,7 +85,7 @@ cartSum();
 /* -------------------------------------------------------------------------- */
 
 //homepage
-app.get("/", (req, res) => {
+app.get("/home", (req, res) => {
   Inventory.find(req.body, (err, allGear) => {
     res.render("home.ejs", {
       title: "Homepage",
@@ -249,6 +249,13 @@ app.delete("/home/:id", (req, res) => {
   console.log("before mongoose Deleting listing");
   Inventory.findByIdAndRemove(req.params.id, (err, removedListing) => {
     res.redirect("/sellerListings");
+  });
+});
+
+app.delete("/cart/remove/:id", (req, res) => {
+  console.log("before mongoose Deleting listing");
+  Cart.findByIdAndRemove(req.params.id, (err, removeditem) => {
+    res.redirect("/cart");
   });
 });
 

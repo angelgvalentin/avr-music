@@ -20,22 +20,25 @@
             <li><%=itemsInCart[i].name %></li>
 
             <li>Price: $<%=itemsInCart[i].price %></li>
+            <form
+              action="/cart/remove/<%=itemsInCart[i].id %>?_method=DELETE"
+              method="POST"
+            >
+              <input
+                style="margin-left: 10px"
+                class="btn btn-outline-danger"
+                type="submit"
+                value="Remove"
+              />
+            </form>
           </div>
         </a>
+
         <% } %>
       </ul>
       <a href="/newSaleListing">Sell your Gear</a>
     </section>
 
-    <script>
-      let hey = 0;
-      const sum = () => {
-        for (let i = 0; i < itemsInCart[i].length; i++) {
-          hey = hey + itemsInCart[i].price;
-          console.log(hey);
-        }
-      };
-    </script>
     <footer></footer>
   </body>
 </html>
