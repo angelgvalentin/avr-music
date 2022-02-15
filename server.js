@@ -85,7 +85,7 @@ cartSum();
 /* -------------------------------------------------------------------------- */
 
 //homepage
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
   Inventory.find(req.body, (err, allGear) => {
     res.render("home.ejs", {
       title: "Homepage",
