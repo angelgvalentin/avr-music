@@ -24,7 +24,7 @@ module.exports = [
     description:
       'Committed to making improvements on their already legendary amps, Fender brings the Hot Rod DeVille 212 IV to the playing public for 2018. This gigging workhorse amp has been updated with modified preamp circuitry, smoother-sounding spring reverb, and refined aesthetics. Still in place are a pair of 12" Celestion A-type speakers — that\'s two smoking-hot 60-watt 2 x 12" speakers that kick out a beautifully wide palette of tonal colors from hot, crisp high end to full-bodied, defined lows.',
     img: "https://media.musiciansfriend.com/is/image/MMGS7/K47973000001000-04-2000x2000.jpg",
-    video: "https://www.youtube.com/watch?v=5ud4vtKCZRc",
+    video: "https://www.youtube.com/embed/5ud4vtKCZRc",
   },
   {
     category: "Amp",
