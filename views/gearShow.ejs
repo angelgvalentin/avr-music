@@ -4,8 +4,9 @@
   <body>
     <%- include('./partials/nav.ejs')%>
 
-    <section>
+    <section id="bigContainer">
       <div id="left-container4video">
+        <h1><%=gearShow.name %></h1>
         <div id="videoContainer">
           <iframe
             width="560"
@@ -18,20 +19,21 @@
           ></iframe>
         </div>
       </div>
+      <div id="rightContainer">
+        <img
+          id="card-img-showpage"
+          src="<%=gearShow.img%>"
+          alt="Guitar Photo"
+        />
 
-      <ul>
-        <li>
-          <a href=""
-            ><img id="card-img" src="<%=gearShow.img%>" alt="Guitar Photo"
-          /></a>
-        </li>
-        <li><%=gearShow.name %></li>
-        <li><%=gearShow.description %></li>
-        <li>Price: $<%=gearShow.price %></li>
-      </ul>
-      <form action="/cart/add/<%=gearShow.id%>" method="POST">
-        <Button>ADD TO CART</Button>
-      </form>
+        <p><%=gearShow.description %></p>
+
+        <h4>Price: $<%=gearShow.price %></h4>
+
+        <form action="/cart/add/<%=gearShow.id%>" method="POST">
+          <Button class="btn btn-outline-success">ADD TO CART</Button>
+        </form>
+      </div>
     </section>
   </body>
 </html>

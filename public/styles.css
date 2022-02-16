@@ -19,6 +19,13 @@ nav {
   margin-top: 20px;
 }
 
+#card-img-showpage {
+  width: 318px;
+  height: auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
 #card-container {
   display: flex;
   width: 250px;
@@ -232,11 +239,11 @@ a {
 }
 
 #bannerProductTitle {
-  width: 728px;
-  height: 50px;
-  font-size: 150px;
-  margin-top: 161px;
-  margin-left: 368px;
+  width: 60%;
+  height: 5vw;
+  font-size: 10vw;
+  margin-top: 143px;
+  margin-left: 21vw;
   font-family: Poppins;
   color: black;
   background: white;
@@ -248,16 +255,15 @@ a {
 }
 
 #sellerListingTitle {
-  width: 930px;
-  height: 50px;
-  font-size: 100px;
-  margin-top: 161px;
-  margin-left: 266px;
+  width: 75%;
+  height: 12vw;
+  font-size: 9vw;
+  margin-top: 143px;
+  margin-left: 14vw;
   font-family: Poppins;
   color: black;
   background: white;
   display: flex;
-  padding: 79px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -315,6 +321,25 @@ section ul a {
   font-family: Poppins, sans-serif;
 }
 
+#bigContainer {
+  display: flex;
+}
+
+#left-container4video {
+  align-items: start;
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#rightContainer {
+  align-items: center;
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 @media (max-width: 568px) {
   #navUL {
     display: none;
@@ -379,6 +404,28 @@ section ul a {
 
   #card-img {
     width: 93px;
+  }
+
+  #pedalbannerCard,
+  #ampsbannerCard,
+  #sellerbannerCard,
+  #guitarbannerCard {
+    height: 238px;
+  }
+
+  #sellerListingTitle {
+    margin-left: 12vw;
+    margin-top: 81px;
+    font-size: 9vw;
+    margin-left: 12vw;
+    padding: 0;
+    height: 20vw;
+    width: 75%;
+  }
+
+  #bannerProductTitle {
+    margin-top: 79px;
+    padding: 32px;
   }
 }
 
