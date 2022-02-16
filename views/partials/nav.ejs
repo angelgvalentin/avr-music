@@ -1,16 +1,49 @@
 <nav id="nav-container" class="navbar navbar-nav">
   <a href="/index"><i id="houseicon" class="fa fa-home icon"></i></a>
 
-  <ul>
+  <ul id="navUL">
     <li><a href="/guitars">GUITARS</a></li>
     <li><a href="/pedals">PEDALS</a></li>
     <li><a href="/amps">AMPS</a></li>
     <li><a href="/sellerListings">YOUR LISTINGS</a></li>
 
     <li>
-      <a href="/cart" onclick="openSlideCart()"
-        ><i id="carticon" class="fa fa-shopping-cart icon"></i
-      ></a>
+      <a href="/cart"><i id="carticon" class="fa fa-shopping-cart icon"></i></a>
     </li>
   </ul>
+  <span class="open-slide">
+    <a href="#" onclick="openSlideMenu()">
+      <svg width="30" height="30">
+        <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+        <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+        <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+      </svg>
+    </a>
+  </span>
+
+  <div id="side-menu" class="side-nav">
+    <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+    <li><a href="/index">HOME</a></li>
+    <li><a href="/guitars">GUITARS</a></li>
+    <li><a href="/pedals">PEDALS</a></li>
+    <li><a href="/amps">AMPS</a></li>
+    <li><a href="/sellerListings">YOUR LISTINGS</a></li>
+
+    <li>
+      <a href="/cart">CART</a>
+    </li>
+  </div>
 </nav>
+
+<script>
+  const openSlideMenu = () => {
+    document.getElementById("side-menu").style.width = "100%";
+
+    document.getElementById("main").style.marginLeft = "250px";
+  };
+
+  const closeSlideMenu = () => {
+    document.getElementById("side-menu").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  };
+</script>

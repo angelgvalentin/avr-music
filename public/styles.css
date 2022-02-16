@@ -97,11 +97,12 @@ a {
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: #111;
-  opacity: 0.9;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
+  text-align: center;
 }
 
 .side-nav a {
@@ -198,7 +199,7 @@ a {
   align-items: center;
   padding: 30px;
   margin-top: 212px;
-  margin-left: 844px;
+  margin-left: 60%;
 }
 
 #sell-btn:hover {
@@ -302,4 +303,87 @@ a {
   height: 800px;
   background-image: url(https://data.1freewallpapers.com/detail/electric-guitars-guitars-musical-instruments-equipment-music.jpg);
   background-size: cover;
+}
+
+.open-slide {
+  margin-right: 15px;
+}
+
+section ul a {
+  text-decoration: none;
+  color: black;
+  font-family: Poppins, sans-serif;
+}
+
+@media (max-width: 568px) {
+  #navUL {
+    display: none;
+  }
+
+  body {
+    width: 100%;
+  }
+
+  #sell-btn {
+    height: 40px;
+    width: 237px;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: "Poppins", sans-serif;
+    background: red;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    margin-top: 50px;
+    margin-left: 87px;
+  }
+
+  #siteName {
+    height: 40px;
+    width: 100%;
+    font-size: 40px;
+    font-weight: 800;
+    font-family: "Poppins", sans-serif;
+    background: white;
+    color: Black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 24px;
+    margin-top: 0px;
+    margin-left: 0px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #homebannerCard {
+    height: 235px;
+  }
+
+  section ul {
+    gap: 7px;
+  }
+
+  #card-container li {
+    text-decoration: none;
+  }
+
+  #card-container {
+    font-size: 13px;
+    width: 154px;
+    height: 248px;
+  }
+
+  #card-img {
+    width: 93px;
+  }
+}
+
+@media (min-width: 568px) {
+  .open-slide {
+    display: none;
+  }
 }
