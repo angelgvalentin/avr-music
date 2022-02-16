@@ -290,7 +290,7 @@ a {
   margin-top: 50px;
   /* padding: 0 50px 50px 50px; */
   color: white;
-  height: 730px;
+  height: 798px;
   width: 700px;
   font-family: Poppins, sans-serif;
   font-size: 20px;
@@ -300,6 +300,11 @@ a {
 
 #formStyle textarea {
   font-size: 15px;
+}
+
+#formStyle input {
+  font-size: 15px;
+  width: 100%;
 }
 
 #formHeader {
@@ -319,7 +324,7 @@ a {
 }
 
 #bodybackground {
-  height: 800px;
+  height: 900px;
   background-image: url(https://data.1freewallpapers.com/detail/electric-guitars-guitars-musical-instruments-equipment-music.jpg);
   background-size: cover;
 }
@@ -455,6 +460,15 @@ section ul a {
   #bannerProductTitle {
     margin-top: 79px;
     padding: 32px;
+  }
+
+  #formStyle {
+    margin: 17px;
+    font
+  }
+
+  #formStyle form  {
+    font-size: 15px;
   }
 }
 
