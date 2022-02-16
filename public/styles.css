@@ -402,6 +402,11 @@ section ul a {
     height: 248px;
   }
 
+  #card-container .btn-sm {
+    padding: 2px;
+    font-size: 13px;
+  }
+
   #card-img {
     width: 93px;
   }
