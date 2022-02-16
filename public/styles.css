@@ -193,6 +193,15 @@ a {
   background-repeat: no-repeat;
 }
 
+#cartbannerCard {
+  display: flex;
+  width: 100%;
+  height: 500px;
+  background-image: url("https://www.michaelkellyguitars.com/img/dealers/arthurs-music-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 #sell-btn {
   height: 40px;
   width: 393px;
@@ -276,7 +285,7 @@ a {
 
 #formStyle {
   text-align: left;
-  border: 2px solid black;
+
   width: fit-content;
   margin-top: 50px;
   /* padding: 0 50px 50px 50px; */
@@ -287,6 +296,10 @@ a {
   font-size: 20px;
   font-weight: 700;
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+#formStyle textarea {
+  font-size: 15px;
 }
 
 #formHeader {
@@ -340,6 +353,16 @@ section ul a {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+#submitbtn {
+  background-color: red;
+}
+
+#submitbtn:hover {
+  background-color: white;
+  color: red;
+}
+
 @media (max-width: 568px) {
   #navUL {
     display: none;
@@ -413,6 +436,7 @@ section ul a {
 
   #pedalbannerCard,
   #ampsbannerCard,
+  #cartbannerCard,
   #sellerbannerCard,
   #guitarbannerCard {
     height: 238px;
