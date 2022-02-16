@@ -27,12 +27,13 @@
 
             <li>Price: $<%=itemsInCart[i].price %></li>
             <form
+             
               action="/cart/remove/<%=itemsInCart[i].id %>?_method=DELETE"
               method="POST"
             >
               <input
-                style="margin-left: 10px"
-                class="btn btn-outline-danger"
+                style="width: 90px"
+                class="btn btn-sm btn-outline-danger"
                 type="submit"
                 value="Remove"
               />
