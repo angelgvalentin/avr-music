@@ -64,16 +64,6 @@ const closeSlideCart = () => {
 
 /* ----------------------- END OF SIDE CART FUNCTIONS ----------------------- */
 
-/* -------------------------------------------------------------------------- */
-/*                             CART TOTAL FUNCTION                            */
-/* -------------------------------------------------------------------------- */
-
-let cartTotal = 0;
-const cartSum = () => {
-  console.log(Cart.find({}, { price: { $gte: 199 } }));
-};
-cartSum();
-
 //___________________
 // Routes
 //___________________
@@ -197,6 +187,34 @@ app.post("/pedals");
 app.post("/guitars");
 
 app.post("/amps");
+
+// let cartTotal = 0;
+// const cartSum = () => {
+//   Cart.find({}, { price: 1, _id: 0 }, (err, prices) => {
+//     console.log(prices);
+//   });
+// };
+// cartSum();
+
+// let account = 0;
+// const sumAccount = () => {
+//   for (let i = 0; i < Cart.length; i++) {
+//     account =
+//       account +
+//       Cart.find({}, { price: 1, _id: 0 }, (err, prices) => {
+//         console.log(prices);
+//       });
+//     console.log(account);
+//   }
+//   return account;
+// };
+
+console.log(Cart.length);
+
+// sumAccount();
+
+// const bankAccount = account;
+// console.log(`Money is ${account}`);
 
 //add to cart after side cart fail
 app.get("/cart", (req, res) => {
