@@ -64,16 +64,15 @@ const closeSlideCart = () => {
 
 /* ----------------------- END OF SIDE CART FUNCTIONS ----------------------- */
 
-let cartTotal = 0;
-const cartSum = () => {
-  cartTotal = Cart;
-  console.log(Cart.find({ price: 199 }));
-};
-cartSum();
-
 /* -------------------------------------------------------------------------- */
 /*                             CART TOTAL FUNCTION                            */
 /* -------------------------------------------------------------------------- */
+
+let cartTotal = 0;
+const cartSum = () => {
+  console.log(Cart.find({}, { price: { $gte: 199 } }));
+};
+cartSum();
 
 //___________________
 // Routes
