@@ -1,12 +1,12 @@
 //___________________
 //Dependencies
 //___________________
-const { render } = require("ejs");
+const {render} = require("ejs");
 const express = require("express");
 const methodOverride = require("method-override");
 const mongoose = require("mongoose");
-const { Inventory } = require("./models/inventories");
-const { Cart } = require("./models/inventories");
+const {Inventory} = require("./models/inventories");
+const {Cart} = require("./models/inventories");
 const app = express();
 const db = mongoose.connection;
 require("dotenv").config();
@@ -41,7 +41,7 @@ db.on("disconnected", () => console.log("mongo disconnected"));
 app.use(express.static("public"));
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
-app.use(express.urlencoded({ extended: false })); // extended: false - does not allow nested objects in query strings
+app.use(express.urlencoded({extended: false})); // extended: false - does not allow nested objects in query strings
 app.use(express.json()); // returns middleware that only parses JSON - may or may not need it depending on your project
 
 //use method override
@@ -52,14 +52,14 @@ app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 /* -------------------------------------------------------------------------- */
 
 const openSlideCart = () => {
-  document.getElementById("side-cart").style.width = "250px";
+    document.getElementById("side-cart").style.width = "250px";
 
-  document.getElementById("main").style.marginLeft = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
 };
 
 const closeSlideCart = () => {
-  document.getElementById("side-cart").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
+    document.getElementById("side-cart").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
 };
 
 /* ----------------------- END OF SIDE CART FUNCTIONS ----------------------- */
@@ -75,89 +75,89 @@ const closeSlideCart = () => {
 
 //homepage
 app.get("/index", (req, res) => {
-  Inventory.find(req.body, (err, allGear) => {
-    res.render("home.ejs", {
-      title: "Homepage",
-      allGear,
+    Inventory.find(req.body, (err, allGear) => {
+        res.render("home.ejs", {
+            title: "Homepage",
+            allGear,
+        });
     });
-  });
 
-  // res.send("Hello World! The home page works!");
+    // res.send("Hello World! The home page works!");
 });
 
 //pedals inventory page
 app.get("/pedals", (req, res) => {
-  // res.send("I'm the pedals page!");
+    // res.send("I'm the pedals page!");
 
-  Inventory.find({ category: "Pedal" }, (err, pedalList) => {
-    res.render("pedals.ejs", {
-      pedalList,
-      title: "Pedals",
+    Inventory.find({category: "Pedal"}, (err, pedalList) => {
+        res.render("pedals.ejs", {
+            pedalList,
+            title: "Pedals",
+        });
     });
-  });
 });
 
 //guitars inventory page
 
 app.get("/guitars", (req, res) => {
-  // res.send("I'm the guitars page!");
+    // res.send("I'm the guitars page!");
 
-  Inventory.find({ category: "Guitar" }, (err, guitarList) => {
-    res.render("guitars.ejs", {
-      guitarList,
-      title: "Guitars",
+    Inventory.find({category: "Guitar"}, (err, guitarList) => {
+        res.render("guitars.ejs", {
+            guitarList,
+            title: "Guitars",
+        });
     });
-  });
 });
 
 //amps inventory page
 
 app.get("/amps", (req, res) => {
-  Inventory.find({ category: "Amp" }, (err, ampList) => {
-    res.render("amps.ejs", {
-      ampList,
-      title: "Amps",
+    Inventory.find({category: "Amp"}, (err, ampList) => {
+        res.render("amps.ejs", {
+            ampList,
+            title: "Amps",
+        });
     });
-  });
 });
 
 //gear Show  page
 app.get("/gearShow/:id", (req, res) => {
-  Inventory.findById(req.params.id, (err, gearShow) => {
-    res.render("gearShow.ejs", {
-      gearShow,
-      title: "Gear Show",
+    Inventory.findById(req.params.id, (err, gearShow) => {
+        res.render("gearShow.ejs", {
+            gearShow,
+            title: "Gear Show",
+        });
     });
-  });
 });
 
 // new sale listing page
 app.get("/newSaleListing", (req, res) => {
-  res.render("newSaleListing.ejs", {
-    title: "Sell Your Gear",
-  });
-  // res.send("I'm the new sale listing page!");
+    res.render("newSaleListing.ejs", {
+        title: "Sell Your Gear",
+    });
+    // res.send("I'm the new sale listing page!");
 });
 
 app.get("/sellerListings", (req, res) => {
-  // res.send("I'm the guitars page!");
+    // res.send("I'm the guitars page!");
 
-  Inventory.find({ userListing: "userListing" }, (err, sellerList) => {
-    res.render("sellerListings.ejs", {
-      sellerList,
-      title: "Seller Listings",
+    Inventory.find({userListing: "userListing"}, (err, sellerList) => {
+        res.render("sellerListings.ejs", {
+            sellerList,
+            title: "Seller Listings",
+        });
     });
-  });
 });
 
 //edit Sale Listing Page
 app.get("/editSale/:id", (req, res) => {
-  Inventory.findById(req.params.id, (err, editedListing) => {
-    res.render("editSale.ejs", {
-      title: "Edit Sale",
-      editedListing,
+    Inventory.findById(req.params.id, (err, editedListing) => {
+        res.render("editSale.ejs", {
+            title: "Edit Sale",
+            editedListing,
+        });
     });
-  });
 });
 
 // //SIDE SLIDE SHOPPNIG CART
@@ -176,10 +176,10 @@ app.get("/editSale/:id", (req, res) => {
 
 //new seller listing
 app.post("/index", (req, res) => {
-  Inventory.create(req.body, (err, newListing) => {
-    console.log("created new listing");
-    res.redirect("/index");
-  });
+    Inventory.create(req.body, (err, newListing) => {
+        console.log("created new listing");
+        res.redirect("/index");
+    });
 });
 
 app.post("/pedals");
@@ -218,22 +218,22 @@ console.log(Cart.length);
 
 //add to cart after side cart fail
 app.get("/cart", (req, res) => {
-  Cart.find(req.body, (err, itemsInCart) => {
-    res.render("cart.ejs", {
-      title: "Shopping Cart",
-      itemsInCart,
-      cartTotal,
+    Cart.find(req.body, (err, itemsInCart) => {
+        res.render("cart.ejs", {
+            title: "Shopping Cart",
+            itemsInCart,
+            // cartTotal,
+        });
     });
-  });
 });
 
 // submit form to add item to cart
 app.post("/cart/add/:id", async (req, res) => {
-  console.log("pokemon added to team");
-  const id = req.params.id;
-  const addedGear = await Inventory.findById(id);
-  await Cart.insertMany([addedGear]);
-  res.redirect("/cart");
+    console.log("pokemon added to team");
+    const id = req.params.id;
+    const addedGear = await Inventory.findById(id);
+    await Cart.insertMany([addedGear]);
+    res.redirect("/cart");
 });
 
 // //add to cart route
@@ -248,14 +248,14 @@ app.post("/cart/add/:id", async (req, res) => {
 /* -------------------------------------------------------------------------- */
 
 app.put("/editSale/:id", (req, res) => {
-  Inventory.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    { new: true },
-    (err, listingUpdateInfo) => {
-      res.redirect("/sellerListings");
-    }
-  );
+    Inventory.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        {new: true},
+        (err, listingUpdateInfo) => {
+            res.redirect("/sellerListings");
+        }
+    );
 });
 
 /* -------------------------------------------------------------------------- */
@@ -263,17 +263,17 @@ app.put("/editSale/:id", (req, res) => {
 /* -------------------------------------------------------------------------- */
 
 app.delete("/home/:id", (req, res) => {
-  console.log("before mongoose Deleting listing");
-  Inventory.findByIdAndRemove(req.params.id, (err, removedListing) => {
-    res.redirect("/sellerListings");
-  });
+    console.log("before mongoose Deleting listing");
+    Inventory.findByIdAndRemove(req.params.id, (err, removedListing) => {
+        res.redirect("/sellerListings");
+    });
 });
 
 app.delete("/cart/remove/:id", (req, res) => {
-  console.log("before mongoose Deleting listing");
-  Cart.findByIdAndRemove(req.params.id, (err, removeditem) => {
-    res.redirect("/cart");
-  });
+    console.log("before mongoose Deleting listing");
+    Cart.findByIdAndRemove(req.params.id, (err, removeditem) => {
+        res.redirect("/cart");
+    });
 });
 
 //___________________
